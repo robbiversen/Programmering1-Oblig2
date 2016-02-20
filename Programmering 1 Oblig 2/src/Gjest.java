@@ -16,8 +16,11 @@ public class Gjest extends Kort {
 	}
 
 	public boolean sjekkPIN(int pin){
+		if (isSperret()) {
+			return false;
+		}
 		this.dateToday = new GregorianCalendar();
-		if (gyldigTilDato.after(dateToday)) {
+		if (gyldigTilDato.before(dateToday)) {
 			super.setSperretKort(true);
 		}
 		return super.sjekkPIN(pin);
@@ -25,7 +28,7 @@ public class Gjest extends Kort {
 
 	@Override
 	public String toString() {
-		return "Gjest \nDager Gyldig: " + dagerGyldig + "\nGyldig Til Dato: " + gyldigTilDato + "\n"
+		return "Gjest \nDager Gyldig: " + dagerGyldig + "\nGyldig Til Dato: " + gyldigTilDato.getTime() + "\n"
 				+ super.toString();
 	}
 

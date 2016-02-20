@@ -11,7 +11,7 @@ public abstract class Kort {
 	private int kortnummer;
 	private int aksesskode;
 	private boolean sperretKort;
-	private int antallkort = 100000;
+	private static int antallkort = 100000;
 	
 	
 	public Kort(String navn, int pin) {
@@ -52,7 +52,7 @@ public abstract class Kort {
 
 	@Override
 	public String toString() {
-		return "Kort \nOpprettet: " + dateCreated + "\nNavn: " + navn + "\nPin: " + pin + "\nKortnummer: " + kortnummer
+		return "Kort \nOpprettet: " + dateCreated.getTime() + "\nNavn: " + navn + "\nPin: " + pin + "\nKortnummer: " + kortnummer
 				+ "\nAksesskode: " + aksesskode + "\nSperret: " + sperretKort;
 	}
 	
