@@ -3,7 +3,7 @@ import java.util.Collections;
 
 public class KortTest {
 
-	public static void main(String[] args) throws CloneNotSupportedException {
+	public static void main(String[] args) {
 
 		ArrayList<Kort> reg = new ArrayList<Kort>();
 
@@ -11,12 +11,17 @@ public class KortTest {
 		Kort k2 = new Gjest("Marit", "Olsen");
 		Kort k3 = new Ansatt("Bjørn", "Aasen", 1234, 4, 200);
 		Kort k4 = new Ansatt("Egon", "Olsen", 1252, 0, 400);
-		Kort k5 = (Kort) k4.clone();
-		reg.add(k1);
-		reg.add(k2);
-		reg.add(k3);
-		reg.add(k4);
-		reg.add(k5);
+		try {
+			Kort k5 = (Kort) k4.clone();
+
+			reg.add(k1);
+			reg.add(k2);
+			reg.add(k3);
+			reg.add(k4);
+			reg.add(k5);
+		} catch (CloneNotSupportedException e) {
+			System.out.println("Cannot clone object k5");
+		}
 
 		// fikk ikke denne til å virke som den skulle, etter mye feilsøking bla
 		// inne på compareTo metoden i Kort klassen aner jeg fremdeles ikke
