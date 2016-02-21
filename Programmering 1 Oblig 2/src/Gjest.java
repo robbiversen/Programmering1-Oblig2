@@ -30,6 +30,7 @@ public class Gjest extends Kort {
 		}
 	}
 
+	
 	@Override
 	public String toString() {
 		return "Gjest \nDager Gyldig: " + dagerGyldig + "\nGyldig Til Dato: " + gyldigTilDato.getTime() + "\n"

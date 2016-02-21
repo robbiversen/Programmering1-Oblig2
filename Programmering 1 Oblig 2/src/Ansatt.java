@@ -94,6 +94,7 @@ public class Ansatt extends Kort implements Konstanter {
 		}
 	}
 
+
 	@Override
 	public String toString() {
 		return "Ansatt \nKontortid: " + openKontortid + " - " + stengtKontortid + "\nKreditt: " + beregnKreditt() + "\nBonus: " + beregnBonus() + "\n" + super.toString();

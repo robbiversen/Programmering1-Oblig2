@@ -1,6 +1,6 @@
 import java.util.GregorianCalendar;
 
-public abstract class Kort {
+public abstract class Kort implements Comparable<Kort>, Cloneable {
 	private GregorianCalendar dateCreated;
 	private String fornavn;
 	private String etternavn;
@@ -55,6 +55,32 @@ public abstract class Kort {
 	}
 	
 	public abstract boolean sjekkPIN(int pin);
+
+	
+	@Override
+	public int compareTo(Kort k) {
+        if (this .getEtternavn().compareTo(k.getEtternavn()) > 0){
+            return 1;
+     }
+      else if (this.getEtternavn().compareTo(k.getEtternavn()) < 0){
+            return -1;
+     }
+      else {
+            if (this .getFornavn().compareTo(k.getFornavn()) > 0){
+                  return 1;
+           }
+            else if (this.getFornavn().compareTo(k.getFornavn()) < 0){
+                  return -1;
+           }
+            else
+                  return 0;
+      }
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
 
 	@Override
 	public String toString() {
