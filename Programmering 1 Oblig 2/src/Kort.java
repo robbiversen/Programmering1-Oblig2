@@ -54,18 +54,11 @@ public abstract class Kort implements Comparable<Kort>, Cloneable {
 
 	@Override
 	public int compareTo(Kort k) {
-		if (this.getEtternavn().compareTo(k.getEtternavn()) > 0) {
-			return 1;
-		} else if (this.getEtternavn().compareTo(k.getEtternavn()) < 0) {
-			return -1;
-		} else {
-			if (this.getFornavn().compareTo(k.getFornavn()) > 0) {
-				return 1;
-			} else if (this.getFornavn().compareTo(k.getFornavn()) < 0) {
-				return -1;
-			} else
-				return 0;
-		}
+		int alfabetisk = this.getEtternavn().compareTo(k.getEtternavn());
+			if (alfabetisk == 0) {
+				alfabetisk = this.getFornavn().compareTo(k.getFornavn());
+			}
+			return alfabetisk;
 	}
 
 	@Override
