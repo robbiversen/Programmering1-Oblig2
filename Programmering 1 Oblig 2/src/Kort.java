@@ -7,7 +7,7 @@ public abstract class Kort {
 	//private java.util.Date dateCreated = new java.util.Date();
 	private GregorianCalendar dateCreated;
 	private String navn;
-	private int pin;
+	protected int pin;
 	private int kortnummer;
 	private int aksesskode;
 	private boolean sperretKort;
@@ -41,14 +41,7 @@ public abstract class Kort {
 	}
 	
 	//skal med abstract i denne metoden?
-	public boolean sjekkPIN(int pin){
-		if (isSperret()) {
-			return false;
-		}
-		else {
-			return this.pin == pin;
-		}
-	}
+	public abstract boolean sjekkPIN(int pin);
 
 	@Override
 	public String toString() {

@@ -14,11 +14,14 @@ public class Ansatt extends Kort {
 		this.dateToday = new GregorianCalendar();
 		if (isSperret()) {
 			return false;
-		} else if ((dateToday.HOUR_OF_DAY >= openKontortid) && (dateToday.HOUR_OF_DAY <= stengtKontortid)
+		} 
+		else if ((dateToday.HOUR_OF_DAY >= openKontortid) && (dateToday.HOUR_OF_DAY <= stengtKontortid)
 				&& (dateToday.DAY_OF_WEEK > 1) && (dateToday.DAY_OF_WEEK < 7)) {
 			return true;
 		}
-		return super.sjekkPIN(pin);
+		else {
+			return this.pin == pin;
+		}
 	}
 
 	@Override

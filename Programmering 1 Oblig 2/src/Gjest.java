@@ -16,14 +16,17 @@ public class Gjest extends Kort {
 	}
 
 	public boolean sjekkPIN(int pin){
+		this.dateToday = new GregorianCalendar();
 		if (isSperret()) {
 			return false;
 		}
-		this.dateToday = new GregorianCalendar();
-		if (gyldigTilDato.before(dateToday)) {
+		else if (gyldigTilDato.before(dateToday)) {
 			super.setSperretKort(true);
+			return false;
 		}
-		return super.sjekkPIN(pin);
+		else {
+			return this.pin == pin;
+		}
 	}
 
 	@Override
