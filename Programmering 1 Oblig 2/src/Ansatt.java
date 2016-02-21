@@ -10,6 +10,7 @@ public class Ansatt extends Kort {
 		super(navn, pin);
 	}
 
+	@Override
 	public boolean sjekkPIN(int pin) {
 		this.dateToday = new GregorianCalendar();
 		if (isSperret()) {

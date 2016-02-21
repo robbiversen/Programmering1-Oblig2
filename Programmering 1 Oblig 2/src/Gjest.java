@@ -15,6 +15,7 @@ public class Gjest extends Kort {
 		return gyldigTilDato;
 	}
 
+	@Override
 	public boolean sjekkPIN(int pin){
 		this.dateToday = new GregorianCalendar();
 		if (isSperret()) {
