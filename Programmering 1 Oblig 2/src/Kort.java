@@ -9,8 +9,7 @@ public abstract class Kort implements Comparable<Kort>, Cloneable {
 	private int aksesskode;
 	private boolean sperretKort;
 	private static int antallkort = 100000;
-	
-	
+
 	public Kort(String fornavn, String etternavn, int pin) {
 		super();
 		this.dateCreated = new GregorianCalendar();
@@ -18,29 +17,26 @@ public abstract class Kort implements Comparable<Kort>, Cloneable {
 		this.etternavn = etternavn;
 		this.pin = pin;
 		this.kortnummer = ++antallkort;
-		//this.aksesskode = aksesskode;
+		// this.aksesskode = aksesskode; ser ingen grunn i å ha med denne videre
+		// uten flere opplysninger
 		this.sperretKort = false;
 	}
-	
+
 	public String getFornavn() {
 		return fornavn;
 	}
-
 
 	public void setFornavn(String fornavn) {
 		this.fornavn = fornavn;
 	}
 
-
 	public String getEtternavn() {
 		return etternavn;
 	}
 
-
 	public void setEtternavn(String etternavn) {
 		this.etternavn = etternavn;
 	}
-
 
 	public GregorianCalendar getDateCreated() {
 		return dateCreated;
@@ -49,32 +45,27 @@ public abstract class Kort implements Comparable<Kort>, Cloneable {
 	public boolean isSperret() {
 		return sperretKort;
 	}
-	
-	public void setSperretKort(boolean sperretKort){
+
+	public void setSperretKort(boolean sperretKort) {
 		this.sperretKort = sperretKort;
 	}
-	
+
 	public abstract boolean sjekkPIN(int pin);
 
-	
 	@Override
 	public int compareTo(Kort k) {
-        if (this .getEtternavn().compareTo(k.getEtternavn()) > 0){
-            return 1;
-     }
-      else if (this.getEtternavn().compareTo(k.getEtternavn()) < 0){
-            return -1;
-     }
-      else {
-            if (this .getFornavn().compareTo(k.getFornavn()) > 0){
-                  return 1;
-           }
-            else if (this.getFornavn().compareTo(k.getFornavn()) < 0){
-                  return -1;
-           }
-            else
-                  return 0;
-      }
+		if (this.getEtternavn().compareTo(k.getEtternavn()) > 0) {
+			return 1;
+		} else if (this.getEtternavn().compareTo(k.getEtternavn()) < 0) {
+			return -1;
+		} else {
+			if (this.getFornavn().compareTo(k.getFornavn()) > 0) {
+				return 1;
+			} else if (this.getFornavn().compareTo(k.getFornavn()) < 0) {
+				return -1;
+			} else
+				return 0;
+		}
 	}
 
 	@Override
@@ -84,12 +75,8 @@ public abstract class Kort implements Comparable<Kort>, Cloneable {
 
 	@Override
 	public String toString() {
-		return "Kort \nOpprettet: " + dateCreated.getTime() + "\nNavn: " + fornavn + " " + etternavn + "\nPin: " + pin + "\nKortnummer: " + kortnummer
-				+ "\nAksesskode: " + aksesskode + "\nSperret: " + sperretKort;
+		return "Kort \nOpprettet: " + dateCreated.getTime() + "\nNavn: " + fornavn + " " + etternavn + "\nPin: " + pin
+				+ "\nKortnummer: " + kortnummer + "\nAksesskode: " + aksesskode + "\nSperret: " + sperretKort + "\n\n";
 	}
-	
+
 }
-
-
-
-

@@ -1,7 +1,7 @@
 
 public interface Konstanter {
-	int kreditt = 2;
-	int bonus = 3000;
+	final int KREDITT = 2;
+	final int BONUS = 3000;
 
 	public void settFornavn(String fornavn);
 	

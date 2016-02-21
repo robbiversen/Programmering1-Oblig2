@@ -9,8 +9,8 @@ public class KortTest {
 
 		Kort k1 = new Ansatt("Ole", "Nilsen", 1234, 3, 180);
 		Kort k2 = new Gjest("Marit", "Olsen");
-		Kort k3 = new Ansatt("Bjørn", "Aasen", 1234, 4, 200);
-		Kort k4 = new Ansatt("Egon", "Olsen", 1252, 0, 400);
+		Kort k3 = new Ansatt("Bjørn", "Aasen", 6543, 4, 200);
+		Kort k4 = new Ansatt("Egon", "Olsen", 1234, 0, 400);
 		try {
 			Kort k5 = (Kort) k4.clone();
 
@@ -40,7 +40,7 @@ public class KortTest {
 			Kort kort = (Kort) reg.get(i);
 			System.out.print(kort);
 			System.out.println("\nTest av kort: med kode 1234 er" + (kort.sjekkPIN(1234) ? " gyldig" : " ugyldig"));
-			System.out.println("\nTest av kort: med kode 9999 er" + (kort.sjekkPIN(9999) ? " gyldig" : " ugyldig"));
+			System.out.println("\nTest av kort: med kode 9999 er" + (kort.sjekkPIN(9999) ? " gyldig" : " ugyldig\n\n"));
 		}
 
 		System.out.println(k3.compareTo(k2));

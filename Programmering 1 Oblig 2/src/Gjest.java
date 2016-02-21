@@ -10,27 +10,24 @@ public class Gjest extends Kort {
 		this.gyldigTilDato = new GregorianCalendar();
 		gyldigTilDato.add(GregorianCalendar.DAY_OF_MONTH, dagerGyldig);
 	}
-	
+
 	public GregorianCalendar getGyldigTilDato() {
 		return gyldigTilDato;
 	}
 
 	@Override
-	public boolean sjekkPIN(int pin){
+	public boolean sjekkPIN(int pin) {
 		this.dateToday = new GregorianCalendar();
 		if (isSperret()) {
 			return false;
-		}
-		else if (gyldigTilDato.before(dateToday)) {
+		} else if (gyldigTilDato.before(dateToday)) {
 			super.setSperretKort(true);
 			return false;
-		}
-		else {
+		} else {
 			return this.pin == pin;
 		}
 	}
 
-	
 	@Override
 	public String toString() {
 		return "Gjest \nDager Gyldig: " + dagerGyldig + "\nGyldig Til Dato: " + gyldigTilDato.getTime() + "\n"
