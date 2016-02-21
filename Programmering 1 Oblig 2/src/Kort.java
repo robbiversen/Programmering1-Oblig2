@@ -2,7 +2,8 @@ import java.util.GregorianCalendar;
 
 public abstract class Kort {
 	private GregorianCalendar dateCreated;
-	private String navn;
+	private String fornavn;
+	private String etternavn;
 	protected int pin;
 	private int kortnummer;
 	private int aksesskode;
@@ -10,20 +11,37 @@ public abstract class Kort {
 	private static int antallkort = 100000;
 	
 	
-	public Kort(String navn, int pin) {
+	public Kort(String fornavn, String etternavn, int pin) {
 		super();
 		this.dateCreated = new GregorianCalendar();
-		this.navn = navn;
+		this.fornavn = fornavn;
+		this.etternavn = etternavn;
 		this.pin = pin;
 		this.kortnummer = ++antallkort;
 		//this.aksesskode = aksesskode;
 		this.sperretKort = false;
 	}
 	
-	public String getNavn() {
-		return this.navn;
+	public String getFornavn() {
+		return fornavn;
 	}
-	
+
+
+	public void setFornavn(String fornavn) {
+		this.fornavn = fornavn;
+	}
+
+
+	public String getEtternavn() {
+		return etternavn;
+	}
+
+
+	public void setEtternavn(String etternavn) {
+		this.etternavn = etternavn;
+	}
+
+
 	public GregorianCalendar getDateCreated() {
 		return dateCreated;
 	}
@@ -40,7 +58,7 @@ public abstract class Kort {
 
 	@Override
 	public String toString() {
-		return "Kort \nOpprettet: " + dateCreated.getTime() + "\nNavn: " + navn + "\nPin: " + pin + "\nKortnummer: " + kortnummer
+		return "Kort \nOpprettet: " + dateCreated.getTime() + "\nNavn: " + fornavn + " " + etternavn + "\nPin: " + pin + "\nKortnummer: " + kortnummer
 				+ "\nAksesskode: " + aksesskode + "\nSperret: " + sperretKort;
 	}
 	

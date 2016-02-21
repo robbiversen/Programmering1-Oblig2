@@ -5,8 +5,8 @@ public class Gjest extends Kort {
 	private GregorianCalendar gyldigTilDato;
 	private GregorianCalendar dateToday;
 
-	public Gjest(String navn) {
-		super(navn, 9999);
+	public Gjest(String fornavn, String etternavn) {
+		super(fornavn, etternavn, 9999);
 		this.gyldigTilDato = new GregorianCalendar();
 		gyldigTilDato.add(GregorianCalendar.DAY_OF_MONTH, dagerGyldig);
 	}
