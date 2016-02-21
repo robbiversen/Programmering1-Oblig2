@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class KortTest {
 
@@ -23,10 +24,18 @@ public class KortTest {
 			System.out.println("Cannot clone object k5");
 		}
 
-		// fikk ikke denne til å virke som den skulle, etter mye feilsøking bla
-		// inne på compareTo metoden i Kort klassen aner jeg fremdeles ikke
-		// hvorfor denne ikke vil fungere.
+		// fikk ikke Collections.sort(reg) til å virke som den skulle, etter mye
+		// feilsøking bla inne på compareTo metoden i Kort klassen aner jeg
+		// fremdeles ikke hvorfor denne ikke vil fungere.
 		// Collections.sort(reg);
+
+		// Eneste måte jeg så ut til å få Collections til å fungere som gitt i
+		// oppgaven var å benytte meg av Comparator klassen, men denne kommer
+		// vell strengt tatt ikke inn før kapittel 20, så er spent på å se
+		// hvordan
+		// dette var ment å løses uten den.
+
+		Collections.sort(reg, new MyComparator());
 
 		for (int i = 0; i < reg.size(); i++) {
 			Kort kort = (Kort) reg.get(i);
@@ -37,4 +46,5 @@ public class KortTest {
 
 		System.out.println(k3.compareTo(k2));
 	}
+
 }
