@@ -1,10 +1,6 @@
-//import java.util.ArrayList;
-//import java.util.Date;
 import java.util.GregorianCalendar;
 
 public abstract class Kort {
-	//private ArrayList<Navn> navn = new ArrayList<Navn>();
-	//private java.util.Date dateCreated = new java.util.Date();
 	private GregorianCalendar dateCreated;
 	private String navn;
 	protected int pin;
@@ -40,7 +36,6 @@ public abstract class Kort {
 		this.sperretKort = sperretKort;
 	}
 	
-	//skal med abstract i denne metoden?
 	public abstract boolean sjekkPIN(int pin);
 
 	@Override
