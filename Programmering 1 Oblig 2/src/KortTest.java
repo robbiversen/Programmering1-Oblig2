@@ -31,8 +31,7 @@ public class KortTest {
 		// Eneste måte jeg så ut til å få Collections til å fungere som gitt i
 		// oppgaven var å benytte meg av Comparator klassen, men denne kommer
 		// vell strengt tatt ikke inn før kapittel 20, så er spent på å se
-		// hvordan
-		// dette var ment å løses uten den.
+		// hvordan dette var ment å løses uten den.
 
 		Collections.sort(reg, new MyComparator());
 

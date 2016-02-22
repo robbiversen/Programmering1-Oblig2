@@ -62,7 +62,7 @@ public abstract class Kort implements Comparable<Kort>, Cloneable {
 	}
 
 	@Override
-	protected Object clone() throws CloneNotSupportedException {
+	public Object clone() throws CloneNotSupportedException {
 		return super.clone();
 	}
 
